@@ -1,0 +1,45 @@
+/* Empty. Add your own CSS if you like */
+/*功能页面*/
+.wrap {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrap ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 98%;
+    overflow: hidden;
+    margin-left: 2%
+}
+
+.wrap ul li {
+    position: relative;
+    float: left;
+    width: 48.3%;
+}
+
+.wrap ul li a {
+    position: relative;
+    margin: 8% 5% 0 8%;
+    display: block;
+}
+
+.wrap ul li a img {
+    position: relative;
+    display: block;
+    width: 100%;
+
+}
+
+.wrap ul li a span {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    font-size: 2.5rem;
+    right: 8%;
+    color: #fff;
+}

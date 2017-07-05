@@ -1,0 +1,108 @@
+<ion-view view-title="党建动态">
+	<ion-header-bar class="bar-positive">
+		<div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+			<div class="tabs">
+				<a ng-class="{'tab-item': true, 'active': headTabType == 'xwrd'}" ng-click="selectHeadTab('xwrd')">
+					新闻热点
+				</a>
+				<a ng-class="{'tab-item': true, 'active': headTabType == 'jcdj'}" ng-click="selectHeadTab('jcdj')">
+					基层党建
+				</a>
+				<a ng-class="{'tab-item': true, 'active': headTabType == 'tzgg'}" ng-click="selectHeadTab('tzgg')">
+					通知公告
+				</a>
+				<a ng-class="{'tab-item': true, 'active': headTabType == 'ztzl'}" ng-click="selectHeadTab('ztzl')">
+					专题专栏
+				</a>
+			</div>
+		</div>
+	</ion-header-bar>
+	<ion-content style="top: 88px; bottom: 44px">
+		<div ng-show="headTabType == 'xwrd'">
+			<ion-refresher
+					pulling-text="下拉刷新"
+					refreshing-text="正在刷新"
+					on-refresh="doRefresh()"
+					spinner="android">
+			</ion-refresher>
+			<ion-list>
+				<ion-item ng-repeat="item in xwrdList">
+					<a class="item item-thumbnail-left" href="#">
+						<img src="../img/ionic.png">
+						<h2>{{item.bt}}</h2>
+						<p>{{item.fbdw}}</p>
+						<p>{{item.fbsj}}</p>
+					</a>
+				</ion-item>
+			</ion-list>
+			<ion-infinite-scroll on-infinite="loadMoreXwrd()" spinner="android" distance="1%" immediate-check="false" ng-if="!xwrdListEnd"></ion-infinite-scroll>
+		</div>
+		<div class="list" ng-show="headTabType == 'jcdj'">
+			<a class="item item-thumbnail-left" href="#">
+				<img src="../img/ionic.png">
+				<h2>Pretty Hate Machine</h2>
+				<p>Nine Inch Nails</p>
+			</a>
+			<a class="item item-thumbnail-left" href="#">
+				<img src="../img/ionic.png">
+				<h2>Pretty Hate Machine</h2>
+				<p>Nine Inch Nails</p>
+			</a>
+		</div>
+		<div class="list" ng-show="headTabType == 'tzgg'">
+			<a class="item item-thumbnail-left" href="#">
+				<img src="../img/ionic.png">
+				<h2>Pretty Hate Machine</h2>
+				<p>Nine Inch Nails</p>
+			</a>
+			<a class="item item-thumbnail-left" href="#">
+				<img src="../img/ionic.png">
+				<h2>Pretty Hate Machine</h2>
+				<p>Nine Inch Nails</p>
+			</a>
+			<a class="item item-thumbnail-left" href="#">
+				<img src="../img/ionic.png">
+				<h2>Pretty Hate Machine</h2>
+				<p>Nine Inch Nails</p>
+			</a>
+		</div>
+		<div class="list" ng-show="headTabType == 'ztzl'">
+			<a class="item item-thumbnail-left" href="#">
+				<img src="../img/ionic.png">
+				<h2>Pretty Hate Machine</h2>
+				<p>Nine Inch Nails</p>
+			</a>
+			<a class="item item-thumbnail-left" href="#">
+				<img src="../img/ionic.png">
+				<h2>Pretty Hate Machine</h2>
+				<p>Nine Inch Nails</p>
+			</a>
+			<a class="item item-thumbnail-left" href="#">
+				<img src="../img/ionic.png">
+				<h2>Pretty Hate Machine</h2>
+				<p>Nine Inch Nails</p>
+			</a>
+			<a class="item item-thumbnail-left" href="#">
+				<img src="../img/ionic.png">
+				<h2>Pretty Hate Machine</h2>
+				<p>Nine Inch Nails</p>
+			</a>
+		</div>
+	</ion-content>
+	<div class="tabs-striped">
+		<div class="tabs tabs-icon-top">
+			<a class="tab-item active">
+				<i class="icon ion-home"></i>
+				党建动态
+			</a>
+			<a class="tab-item" menu-close href="#/menu/dyjy">
+				<i class="icon ion-star"></i>
+				党员教育
+			</a>
+			<a class="tab-item" menu-close href="#/menu/dyfw">
+				<i class="icon ion-gear-a"></i>
+				党员服务
+			</a>
+		</div>
+	</div>
+</ion-view>
